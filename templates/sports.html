@@ -1,0 +1,16 @@
+{% extends "layout.html" %} 
+
+{% block content %}
+<div class="container-fluid bg-2">
+    <div class="container" style="margin-top: initial;">
+        <h2 style="text-align: left;">Top Headlines <br></h2>
+        <br>
+        <ul>
+            {% for news in news_sports_x %}
+               <li>{{news}}</li> 
+            {% endfor %}
+        </ul>
+       </div>
+    </div>
+    
+{% endblock %}

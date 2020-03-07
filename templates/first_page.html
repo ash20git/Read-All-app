@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Advent+Pro&display=swap');
+
+    html, body {
+      background-image: url("https://images.unsplash.com/photo-1490131784822-b4626a8ec96a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+      border: 0; margin: 0; padding: 0; 
+      background-repeat: no-repeat;
+      background-size: 100% 1000pt;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      overflow: hidden; 
+      font-family: 'Advent Pro', sans-serif;
+
+      }
+    .container{margin: 0 auto; max-width: 1200px; margin-top: 10%;}
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    /*= Reset CSS End
+    ================= */
+    
+    /*= input focus effects css
+    =========================== */
+    :focus{outline: none;}
+    
+    .col-3{width: 27.33%; margin: 40px 3%; position: relative;text-align: center;} /* necessary to give position: relative to parent. */
+    input[type="text"]{ color: rgb(51, 48, 48); width: 100%; box-sizing: border-box; letter-spacing: 0px; font-size: 25px; background-color: inherit; border-bottom: none;}
+    
+    
+     
+    .effect-2{border: 0; padding: 8px 0; border-bottom: 1px solid rgb(20, 20, 19);margin-left: 400px;text-align: center;}
+    
+    
+    
+    .effect-2 ~ .focus-border{position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background-color: rgb(255, 255, 255); transition: 0.4s;}
+    .effect-2:focus ~ .focus-border{width: 100%;  left: 0; margin-left: 400px;}
+    .success {
+        border-width: 2px;
+  border-color: rgb(39, 38, 38);
+  color: rgb(63, 88, 228);
+  margin-left: 525px;
+  box-sizing: 20px;
+  letter-spacing: 1px;
+}
+.btn {
+  border-radius: 5px;
+  background-color: rgb(51, 48, 48);
+  color: white;
+  padding: 10px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.success:hover {
+    border-width: 2px;
+    border-color: rgb(51, 48, 48);
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="display-3" style="color: rgb(36, 34, 34); text-align: center; letter-spacing: 2px;"> Just a second!!</h2>
+        <br>
+        <h2 class="display-4" style="color: rgb(44, 40, 40); text-align: center; letter-spacing: 2px;"> Help us with filling your name</h2>
+            <form method="POST" autocomplete="off" spellcheck="false">
+                <div class="col-3">
+                    
+                    <input class="effect-2 display-4" type="text" placeholder="Name" name="username" autocomplete="off" style="letter-spacing: 2px;">
+                    <span class="focus-border"></span>
+                </div> 
+                <br>
+                <button class="btn success" type="submit" style="letter-spacing: 2px;">Submit</button>
+            </form>
+        
+    </div>
+    
+     
+</body>
+</html>

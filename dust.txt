@@ -1,0 +1,14 @@
+{% if cat == 'news' %} class="active" {% endif %}
+
+font: 20px Montserrat, sans-serif;
+
+https://unsplash.com/photos/9Y5Wk7favpE
+
+
+https://images.unsplash.com/photo-1544411047-c491e34a24e0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80
+
+
+https://images.unsplash.com/photo-1460355976672-71c3f0a4bdac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60
+
+
+https://images.unsplash.com/photo-1567961253094-ffb0a4076e98?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60
