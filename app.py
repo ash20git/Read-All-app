@@ -6,22 +6,21 @@ app = Flask(__name__)
 @app.route('/')
 def get_username():
           
-    return render_template('first_page.html')
+    return render_template('first_page.html')   
 
 @app.route('/',methods=['POST'])
-def index():    
+def index():
+    list_images = test.img_coll()    
     if request.method == 'POST':
         user = request.form['username']
-        if user == '':
-            return render_template('home.html',user='user')
 
-    return render_template('home.html',user=user)
+    return render_template('home.html',user=user, list_images=list_images)
 
 @app.route('/news')
 def get_news(): 
 
     item = test.cat_news()  
-    return render_template('news.html',item=item, cat='news')
+    return render_template('news.html',item=item, cat='news')       
     
 @app.route('/sports/<cat>')
 def get_sports(cat):

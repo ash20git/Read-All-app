@@ -13,9 +13,17 @@
 
 <div class="cat-news">
         <div class="container">
+                News <br>
+              
+                <div class="gallery">
+                        {% for i in list_images %}
 
-        <h1 style="display: inline; letter-spacing: 1px;">News</h1>
-
+                        <div class="gallery-item">
+                                <img class="gallery-image" src="{{i[0]}}"/>
+                                
+                        </div>
+                        {% endfor %}
+        
 </div>
 </div>
 

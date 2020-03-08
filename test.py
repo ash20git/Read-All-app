@@ -85,7 +85,7 @@ def img_coll():
 
     for i in img:
         cnt+=1
-        if cnt>5:
+        if cnt>4:
             break
 
         i=i.find('img')
