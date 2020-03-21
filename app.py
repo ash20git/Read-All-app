@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect
 import test
 
-app = Flask(__name__)
+app = Flask(__name__)   
 
 @app.route('/')
 def get_username():
@@ -19,7 +19,7 @@ def index():
 @app.route('/news')
 def get_news(): 
 
-    item = test.cat_news()  
+    item = test.cat_news()      
     return render_template('news.html',item=item, cat='news')       
     
 @app.route('/sports/<cat>')

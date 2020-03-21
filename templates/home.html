@@ -2,29 +2,31 @@
 {% block content %}
 
 
-<div class="bg-4">
+
    
-       <div class="text">
-                <h1  style="text-align: center;">Hola {{user}}!</h1>
-        <p style="text-align: center;">Welcome to this webapp <br>A stop for all your <strong>reads!!!</strong> </p>
+        <div class="bg-video-wrap">
+                <video src=https://player.vimeo.com/external/173243312.sd.mp4?s=c7e35686f184865a06c88f2d40271a528f4a7bb1&profile_id=164&oauth2_token_id=57447761" loop muted autoplay>
+                </video>
+                <div class="overlay">
                 </div>
-      
-</div>
+                <h1 style="font-size: 80pt; font-family: 'Sacramento', cursive;">Welcome to this app <br> {{user}}!! </h1>
+              </div>
 
-<div class="cat-news">
-        <div class="container">
-                News <br>
-              
-                <div class="gallery">
-                        {% for i in list_images %}
 
-                        <div class="gallery-item">
-                                <img class="gallery-image" src="{{i[0]}}"/>
-                                
-                        </div>
-                        {% endfor %}
-        
-</div>
-</div>
+              <div class="container" style="padding: 40px 0; margin-top: 5%;">
+                <p style="text-align: center; font-weight: 600; font-size: 30pt;">Top Stories</p> 
+		<main class="grid" style="padding-top: 20pt;">
+			{% for i in list_images %}
+		  <article style="border: black;">
+			<img src="{{i[0]}}" alt="Sample photo">
+			<div class="text">
+			  <p style="font: 11pt'Advent Pro', sans-serif; text-align: center; font-weight: bold;">{{i[1]}}</p>
+			  
+			</div>
+			</article>
+			{% endfor %}
+
+		</main>
+	  </div>
 
 {% endblock %}

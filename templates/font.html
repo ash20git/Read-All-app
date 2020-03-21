@@ -8,185 +8,98 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/120b03c183.js" crossorigin="anonymous"></script>
 
   <style>
+@import url('https://fonts.googleapis.com/css?family=Advent+Pro&display=swap');
 
-
-html {
-  box-sizing: border-box;
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
 }
-*, *:before, *:after {
-  box-sizing: inherit;
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
 }
-
-body {
-  background-color: #112233;  
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
 }
-
-.container {
-  max-width: 500px;  
-  margin: 40px auto;
-  overflow: hidden;
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
 }
-
-
-$effect-background: #3085a3;
-
-
-.hero-grid {
-	position: relative;
-	float: left;
-	overflow: hidden;
-	background: $effect-background;
-  cursor: pointer;
-  
-
-  margin: 20px;
-	max-width: 100px;
-	max-height: 150px;
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
 }
-
-.hero-grid-image {
-	position: relative;
-	display: block;
-	min-height: 50%;
-	max-width: 50%;
-	opacity: 0.2;
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
 }
-
-.hero-grid-content {
-	padding: 2em;
-	color: #fff;
-	text-transform: uppercase;
-	font-size: 1.25em;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-  position: absolute;
-  bottom: 50;
-  width: 100%;
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
 }
-
-.hero-grid-content::before,
-.hero-grid-content::after {
-	pointer-events: none;
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
 }
-
-.hero-grid-link {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 1000;
-	text-indent: 200%;
-	white-space: nowrap;
-	font-size: 0;
-	opacity: 0;
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
 }
-
-.hero-grid-title {
-	letter-spacing: -1px;
-	font-weight: 300;
-  margin: 0;
-  padding: 0.25em 0;
-  line-height: 1;
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
 }
-
-.hero-grid-title span {
-	font-weight: 800;
-}
-
-.hero-tag {
-  display: inline-block;
-  font-size: .5em;
-  padding: .5em;
-  background: rgb(209, 137, 137);
-  color: #000;
-}
-
-.hero-grid h2,
-.hero-grid p {
-	margin: 0;
-}
-
-.hero-grid p {
-	letter-spacing: 1px;
-	font-size: 68.5%;
-  height: 2.25em;
-  overflow:hidden;
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
 }
 
 
-
-.effect-image {
-	max-width: none;
-	width: -webkit-calc(100% + 50px);
-	width: calc(100% + 50px);
-	opacity: 0.2;
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s;
-	-webkit-transform: translate3d(-40px,0, 0);
-	transform: translate3d(-40px,0,0);
-}
-
-.effect-target {
-	-webkit-transform: translate3d(0,40px,0);
-	transform: translate3d(0,40px,0);
-}
-
-.effect-target {
-	-webkit-transition: -webkit-transform 0.35s;
-	transition: transform 0.35s;
-}
-
-.effect-text {
-	color: rgba(255,255,255,0.8);
-	opacity: 0;
-	-webkit-transition: opacity 0.2s, -webkit-transform 0.35s;
-	transition: opacity 0.2s, transform 0.35s;
-}
-
-.effect-move:hover .effect-image,
-.effect-move:hover .effect-text {
-	opacity: 1;
-}
-
-.effect-move:hover .effect-target,
-.effect-move:hover .effect-image {
-	-webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
-}
-
-.effect-move:hover .effect-text {
-	-webkit-transition-delay: 0.05s;
-	transition-delay: 0.05s;
-	-webkit-transition-duration: 0.35s;
-	transition-duration: 0.35s;
-}
-
-  </style>
+</style>
+</head>
 <body>
+	<footer style="background-color: black; text-align: center;">
+		<!-- <ul class="social-icons">
+			<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+			<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+			<li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+			<li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+		</ul> -->
+		
+		</footer>
+		<i class="fab fa-twitter fa-7x"></i>
 	
-
-  {% for i in list_images %}
-  <div class="container">
-
-    
-
-    <figure class="hero-grid effect-move">
-      <img class="hero-grid-image effect-image" src="{{i[0]}}" />
-      <figcaption class="hero-grid-content">
-        <span class="hero-tag effect-target">Category</span>
-        <h2 class="hero-grid-title effect-target">NEWS</h2>
-          <p class="hero-grid-text effect-target effect-text">{{i[1]}}</p>
-      </figcaption>
-    </figure>
-
-    <br><br><br><br><br><br><br><br><br>
-  
-  </div>
-  {% endfor %}
-  
-  
 </body>
+
 </html>

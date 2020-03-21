@@ -85,16 +85,45 @@ def img_coll():
 
     for i in img:
         cnt+=1
-        if cnt>4:
+        if cnt>9:
             break
 
         i=i.find('img')
         img_href.append(i['src'])
         img_text.append(i['title'])
+    print(img_href)
 
 
     x = list(zip(img_href,img_text))
 
     return x
+
+
+def img_coll_sports():
+
+    cnt=0
+    img_href = []
+    img_text = []
+    url = 'https://www.indiatvnews.com/sports'
+
+    page = requests.get(url)
+
+    obj = BeautifulSoup(page.text,'html.parser')
+
+    img = obj.find_all('li', class_='p_news')
+
+    for i in img:
+        if cnt>3:
+            break
+        i = i.find('img',class_='lazy')
+        print(i)
+        cnt+=1
+
+    
+
+
+# img_coll_sports()
+
+
 
 

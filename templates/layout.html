@@ -15,21 +15,22 @@
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
 <script>window.jQuery || document.write('<script src="/js/jquery-1.12.4.min.js">\x3C/script>')</script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<script src="https://kit.fontawesome.com/120b03c183.js" crossorigin="anonymous"></script>
 
     <style>
       @import url('https://fonts.googleapis.com/css?family=Advent+Pro&display=swap');
+      @import url('https://fonts.googleapis.com/css?family=Sacramento&display=swap');
         .bg-4 { 
-          
-          background-image: url("https://images.unsplash.com/photo-1535489487631-2058faeabfd2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
-          background-size: cover;
-          background-repeat: no-repeat;
+         
     width: 100%;
-    height: 400px;
-    color: rgb(51, 45, 45);
+    height: 100%;
+    color: rgb(255, 255, 255);
     margin-top: inherit;
     text-align: center;
     padding-top: 80pt;
+  }
+  .text{
+    font-family: 'Sacramento', cursive;
   }
   .gallery {
 	display: flex;
@@ -65,11 +66,11 @@
 
 
   .cat-news{
-    height: 450px;
+    height: 100%;
     width: 100%;
-    padding-top : 5vh;
+    padding-top : 10vh;
     color: rgb(10, 12, 12);
-    background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(148, 141, 141));
+    background-color:rgb(226, 206, 206);
     filter: alpha(opacity=30);
     background-size: 100% 100%;
     background-position: center;
@@ -83,16 +84,12 @@
     color: #555555;
     margin-top: 5%;
   }
-  .bg-2{
-    background-color: rgb(186, 221, 238);
-    color: navy;
-    margin-top: inherit;
-  }
+
   body {
     font: 25px'Advent Pro', sans-serif;
     letter-spacing: 2px;
     line-height: 1.8;
-    color: #f5f6f7;
+    
    
   }
   .container-fluid {
@@ -116,6 +113,7 @@
     letter-spacing: 5px;
     width: 100%;
     color: white;
+    background-color: transparent !important;
   }
   .sticky {
         /*css for  stickey navbar*/
@@ -123,9 +121,7 @@
         top: 0; 
         z-index: 100;
     }
-  .navbar-nav  li a:hover {
-    color: #115dff !important;
-  }
+    
   p{
     font:small;
   }
@@ -133,34 +129,66 @@
     text-align: center;
     font-size: 15px;
   }
-  .my-container {
-        position: relative;
-        background-image: url("https://unsplash.com/photos/9Y5Wk7favpE");
-        overflow: hidden;
-    }
-    .my-container h1 {
-        padding: 50px;
-        text-align: center;
-        z-index: 2;
-        position: relative;
-        color: #fff;
-    } 
-    .my-container img {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: auto;
-        z-index: 1;
-        opacity: 0.6;
-    }
     
+.bg-video-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  background: url(https://designsupply-web.com/samplecontent/vender/codepen/20181014.png) no-repeat center center/cover;
+}
+video {
+  min-width: 100%;
+  min-height: 100vh;
+  z-index: 1;
+}
+.overlay {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(45deg, rgba(0,0,0,.3) 50%, rgba(0,0,0,.7) 50%);
+  background-size: 3px 3px;
+  z-index: 2;
+}
+h1 {
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  top: 25%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 3;
+  width: 100%;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-gap: 20px;
+  align-items: stretch;
+}
+
+.grid > article {
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+.grid > article img {
+  max-width: 100%;
+}
+
+.grid .text {
+  padding: 20px;
+}
     
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-light">
+    <nav class="navbar">
         <div class="container">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -168,12 +196,13 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>                        
             </button>
-            <a class="navbar-brand" href="{{url_for('index')}}" style="font-size: 20px;">HOME</a>
+            <a class="navbar-brand" href="{{url_for('index')}}" style="font-size: 20px; color: rgb(5, 5, 5);">HOME</a>
+            
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-              <li ><a href="{{url_for('get_news')}}">NEWS</a></li>
-              <li><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <li ><a href="{{url_for('get_news')}}" style="color: rgb(0, 0, 0); background-color: transparent !important;">POLITICS</a></li>
+              <li><a style="color: rgb(0, 0, 0); background-color: transparent !important;" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 SPORTS <span class="caret"></span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -182,7 +211,7 @@
                 <a class="dropdown-item" href="{{url_for('get_sports',cat='tennis')}}" style="text-decoration: none;">Tennis</a>
               </div>
             </li>
-              <li><a href="#">SCI-FI</a></li>
+              <li><a href="#" style="background-color: transparent !important; color: rgb(0, 0, 0);">SCI-FI</a></li>
             </ul>
           </div>
         </div>
@@ -191,7 +220,15 @@
     {% block content %}
     {% endblock %}
     
+    <div style="width: 100%; height: 150pt; margin-top: 20pt; color: whitesmoke; background-color: black; text-align: center;">
+      &copy;Copyright 2020. All Rights Reserved. <br>
+      <br>
+      <a href="https://twitter.com/nagarashu21" style="text-decoration: none;" target="_blank"><i class="fab fa-twitter" style="color: blanchedalmond; size: 20pt; padding-right: 20pt;"></i></a>
+      <a href="https://www.facebook.com/ashutosh.nagar.315" style="text-decoration: none;" target="_blank"><i class="fab fa-facebook-f" style="color: blanchedalmond; size: 20pt; padding-right: 20pt;"></i></a>
+      <!-- <i class="fab fa-google" style="color: blanchedalmond; size: 20pt;"></i> -->
 
+
+		  </div>
 
 </body>
 </html>
